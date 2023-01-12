@@ -184,3 +184,16 @@ function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
   }
   add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+
+/*add_action( 'woocommerce_before_shop_loop_item_title', 'bbloomer_new_badge_shop_page', 3 );
+		   
+function bbloomer_new_badge_shop_page() {
+	global $product;
+	$newness_days = 30;
+	$created = strtotime( $product->get_date_created() );
+	if ( ( time() - ( 60 * 60 * 24 * $newness_days ) ) < $created ) {
+		echo '<span class="badge">' . esc_html__( 'NEW', 'woocommerce' ) . '</span>';
+	}
+}
+*/

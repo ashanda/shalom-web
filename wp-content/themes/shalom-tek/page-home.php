@@ -75,81 +75,27 @@ Template Name: Home
                   grow.
                </p>
             </div>
-            <div class="col-12 shop-home">
-               <ul>
-                  <li>
-
-                     <div class="pro-image">
-                        <span class="badge">Sold Out</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/elite-pc.avif" class="w-100" alt="...">
-                     </div>
-                     <div>
-                        <h4 class="">
-                           Exclusive H510 PC
-                        </h4>
-                        <p>Prebuilt H510 PC</p>
-                        <div class="full-br"></div>
-                        <h5>Processor</h5>
-                        <h6> Intel</h6>
-                        <h6>Intel i7-11700K</h6>
-                        <h6>3.60 GHz</h6>
-                        <div class="full-br mt-2"></div>
-                        <h3>
-                           <span>£3,099.00</span>
-                           £1,099.00
-                        </h3>
-                        <button href="#" class="">Shop Deals</button>
-                     </div>
-                  </li>
-                  <li>
-
-                     <div class="pro-image">
-                        <span class="badge">Sold Out</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/elite-pc.avif" class="w-100" alt="...">
-                     </div>
-                     <div>
-                        <h4 class="">
-                           Exclusive H510 PC
-                        </h4>
-                        <p>Prebuilt H510 PC</p>
-                        <div class="full-br"></div>
-                        <h5>Processor</h5>
-                        <h6> Intel</h6>
-                        <h6>Intel i7-11700K</h6>
-                        <h6>3.60 GHz</h6>
-                        <div class="full-br mt-2"></div>
-                        <h3>
-                           <span>£3,099.00</span>
-                           £1,099.00
-                        </h3>
-                        <button href="#" class="">Shop Deals</button>
-                     </div>
-                  </li>
-                  <li>
-
-                     <div class="pro-image">
-                        <span class="badge">Sold Out</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/inc/img/elite-pc.avif" class="w-100" alt="...">
-                     </div>
-                     <div>
-                        <h4 class="">
-                           Exclusive H510 PC
-                        </h4>
-                        <p>Prebuilt H510 PC</p>
-                        <div class="full-br"></div>
-                        <h5>Processor</h5>
-                        <h6> Intel</h6>
-                        <h6>Intel i7-11700K</h6>
-                        <h6>3.60 GHz</h6>
-                        <div class="full-br mt-2"></div>
-                        <h3>
-                           <span>£3,099.00</span>
-                           £1,099.00
-                        </h3>
-                        <button href="#" class="">Shop Deals</button>
-                     </div>
-                  </li>
+            <div class="col-12 shop-home" >
+            <ul class="products" id="height-equal">
+                  <?php
+                     $args = array(
+                        'post_type' => 'product',
+                        'posts_per_page' => 12
+                        );
+                     $loop = new WP_Query( $args );
+                     if ( $loop->have_posts() ) {
+                        while ( $loop->have_posts() ) : $loop->the_post();
+                        
+    
+                           wc_get_template_part( 'content', 'product' );
+                        endwhile;
+                     } else {
+                        echo __( 'No products found' );
+                     }
+                     wp_reset_postdata();
+                  ?>
                </ul>
+              
             </div>
          </div>
       </div>

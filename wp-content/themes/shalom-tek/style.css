@@ -89,12 +89,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  }
  
  a {
-	 text-decoration: none !important;
+	 
 	 transition: all 0.5s ease-in-out;
  }
  
  a:hover, :hover  {
-	 text-decoration: none !important;
+	 
 	 transition: all 0.5s ease-in-out;
  }
  .form-select:focus {
@@ -1372,14 +1372,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  
  /* section-2" end */
  
- /* shop-home */
- .shop-home li{
+ /* products */
+ .products li{
 	 width: 30%;
    
 	 margin: 0 25px;
  }
  
- .shop-home li .pro-image{
+ .products li .pro-image{
 	 /* width: 30%; */
 	 background-color: rgb(245 245 248);
  
@@ -1387,11 +1387,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  
  
  
- .shop-home ul{
+ .products{
 	 
 	 display: flex;
  }
- .shop-home .badge{
+ .products .badge{
 	 border: 1px solid rgb(0 0 0);
 	 color: rgb(0 0 0);
 	 font-size: 13px;
@@ -1410,49 +1410,49 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	 display: none;
 	 transition: .5s ease-in-out;
  }
- .shop-home:hover .quick-btn{
+ .products:hover .quick-btn{
 	 display: block;
 	 transition: .5s ease-in-out;
  }
- .shop-home li .pro-image:hover img {
+ .products li .pro-image:hover img {
 	 transform: scale(0.85);
 	 transition: .5s ease-in-out;
  }
- .shop-home li .pro-image img {
+ .products li .pro-image img {
 	 transform: scale(0.8);
 	 transition: .5s ease-in-out;
  }
- .shop-home h4{
+ .products h4{
 	 font-size: 16px;
 	 color: #000;
 	 padding-top: 15px;
  }
- .shop-home p{
+ .products p{
 	 font-size: 13px;
 	 color: rgb(43, 43, 43);
 	 padding-top: 5px;
 	 padding-bottom: 10px;
  }
- .shop-home div{
+ .products div{
 	 padding-left: 10px;
 	 padding-right: 10px;
  }
- .shop-home .full-br{
+ .products .full-br{
 	 border: 1px solid #8e8e8e;
 	 margin-bottom: 10px;
 	 
  }
- .shop-home h5{
+ .products h5{
 	 font-size: 12px;
 	 color: #000;
 	 padding-top: 5px;
  }
- .shop-home h6{
+ .products h6{
 	 font-size: 11px;
 	 color: #000;
  
  }
- .shop-home button{
+ .products button{
 	 width: 100%;
 	 font-size: 16px;
 	 background-color: rgb(115 21 229);
@@ -1464,18 +1464,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	 transform: scale(1);
 	 transition: .5s ease-in-out;
  }
- .shop-home button:hover{
+ .products button:hover{
 	 transform: scale(1.05);
 	 transition: .5s ease-in-out;
  }
- .shop-home h3{
+ .products h3{
 	 font-size: 14px;
 	 font-weight: 500;
  }
- .shop-home span{
-	 text-decoration-line: line-through !important;
-	 color: #7a7a7a;
- }
+ 
  .sec37{
 	 min-height: 220px;
 	 background-position: center;
@@ -1491,4 +1488,36 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	 background-size: cover;
 	 background-image: url(inc/img/top.png);
  }
+ .products .add_to_cart_button {
+	width: 100%;
+	font-size: 16px;
+	background-color: rgb(115 21 229);
+	color: rgb(255 255 255);
+	border: 0;
+	padding: 8px 0;
+	border-radius: 5px;
+	margin-top: 15px;
+	transform: scale(1);
+	transition: .5s ease-in-out;
+	display: inline-block;
+	text-align: center;
+  }
+
+
+  .products .added_to_cart.wc-forward {
+  font-size: 16px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255 255 255);
+  border: 0;
+  padding: 8px 0;
+  border-radius: 5px;
+  margin-top: 15px;
+  transform: scale(1);
+  transition: .5s ease-in-out;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+
  

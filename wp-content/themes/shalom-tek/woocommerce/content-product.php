@@ -1,67 +1,89 @@
 <?php
 /**
- * The template for displaying product content within loops
+ * The template for displaying product content within loops.
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/content-product.php.
+ * Override this template by copying it to yourtheme/woocommerce/content-product.php
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 3.6.0
+ * @author  WooThemes
+ * @package WooCommerce/Templates
+ * @version 2.4.0
  */
 
-defined( 'ABSPATH' ) || exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
-global $product;
+global $product, $woocommerce_p_loop;
 
-// Ensure visibility.
-if ( empty( $product ) || ! $product->is_visible() ) {
+// Store loop count we're currently on
+if ( empty( $woocommerce_p_loop['loop'] ) ) {
+	$woocommerce_p_loop['loop'] = 0;
+}
+
+// Store column count for displaying the grid
+if ( empty( $woocommerce_p_loop['columns'] ) ) {
+	$woocommerce_p_loop['columns'] = apply_filters( 'loop_shop_columns', 3 );
+}
+
+// Ensure visibility
+if ( ! $product || ! $product->is_visible() ) {
 	return;
 }
+
+// Increase loop count
+$woocommerce_p_loop['loop']++;
+
+// Extra post classes
+$classes = array();
+$classes[] = 'product-block';
+if ( 0 == ( $woocommerce_p_loop['loop'] - 1 ) % $woocommerce_p_loop['columns'] || 1 == $woocommerce_p_loop['columns'] ) {
+	$classes[] = '';
+}
+
+if ( 0 == $woocommerce_p_loop['loop'] % $woocommerce_p_loop['columns'] ) {
+	$classes[] = 'last-child';
+}
 ?>
-<li <?php wc_product_class( '', $product ); ?> >
-	<?php
-	/**
-	 * Hook: woocommerce_before_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_open - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item' );
+<li <?php post_class( $classes ); ?> >
 
-	/**
-	 * Hook: woocommerce_before_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_show_product_loop_sale_flash - 10
-	 * @hooked woocommerce_template_loop_product_thumbnail - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item_title' );
+	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>    
+       
+		
+					<div class="pro-image" >
 
-	/**
-	 * Hook: woocommerce_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_product_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
+                     
+                    <?php
+			/**
+			 * woocommerce_before_shop_loop_item_title hook
+			 *
+			 * @hooked woocommerce_show_product_loop_sale_flash - 10
+			 * @hooked woocommerce_template_loop_product_thumbnail - 10
+			 */
+			do_action( 'woocommerce_before_shop_loop_item_title' );?>			
+			</div>
+						<div>
+                        <h4><?php echo apply_filters( 'my_product_item_title', get_the_title() ); ?></h4>
+						<div class="full-br"></div>
+						<?php echo $product->get_categories( ', ', '<p>' . _n( ' ', '', sizeof( get_the_terms( $post->ID, 'product_cat' ) ), 'woocommerce' ) . ' ', '</p>' ); ?>
+						<h5>Processor</h5>
+                        <h6> Intel</h6>
+                        <h6>Intel i7-11700K</h6>
+                        <h6>3.60 GHz</h6>
+                        <div class="full-br mt-2"></div>
+						<h3>
+						<?php echo $product->get_price_html(); ?>
+                        </h3>				
+                        
+						 <?php /**
+							 * woocommerce_after_shop_loop_item_title hook
+							 *
+							 * @hooked woocommerce_template_loop_rating - 5
+							 * @hooked woocommerce_template_loop_price - 10
+							 */
+							do_action( 'woocommerce_after_shop_loop_item' );?>                       
+						</div>							
+                    
+                
 
-	/**
-	 * Hook: woocommerce_after_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
 
-	/**
-	 * Hook: woocommerce_after_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
-	?>
 </li>

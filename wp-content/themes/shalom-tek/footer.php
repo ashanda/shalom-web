@@ -454,7 +454,13 @@
 integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 
 <?php wp_footer(); ?>
+<script src="<?php echo get_template_directory_uri(); ?>/inc/js/equalize.js" type="text/javascript"></script>
+<script>
+	$( document ).ready(function() {
+    	$('#height-equal').equalize('height');
+	});
 
+</script>
 </body>
 </html>
 	
