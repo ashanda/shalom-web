@@ -14,7 +14,9 @@ Template Name: Innerbanner
 		$title = $cat->name;
 		$description = $cat->description;
 		}else{
-
+            $image = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+            $title = get_the_title();
+		    $description = '';
 		}
 		?>
 			<div class="container-fluid py-4 text-center sec-shop font-poppins ">

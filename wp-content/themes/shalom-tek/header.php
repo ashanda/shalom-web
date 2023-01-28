@@ -334,12 +334,17 @@
                </li>
                <li>
                   
-               <a  href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>" id="mini-cart"><svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em"
+               <!--<a  href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>" id="mini-cart"><svg fill="currentColor" viewBox="0 0 24 24" width="1em" height="1em"
                         class="h-5 md:h-6 w-5 md:w-6 fill-current lg:text-white lg:hover:text-nzxt-dark-grey-100 text-nzxt-volt-400">
                         <path
                            d="M9.69 20.142a1.926 1.926 0 100 3.853 1.926 1.926 0 000-3.853zm0 1.5a.426.426 0 110 .853.426.426 0 010-.853zm9.412-1.5a1.927 1.927 0 100 3.853 1.927 1.927 0 000-3.853zm0 1.5a.426.426 0 110 .853.426.426 0 010-.853zM4.396.141c.317 0 .596.2.703.49l.03.1.905 4.158.045-.015a.745.745 0 01.097-.02l.102-.007H23.22a.75.75 0 01.749.792l-.013.099-1.884 9.892a3.1 3.1 0 01-2.903 2.48l-.185.002H9.94a3.101 3.101 0 01-3.058-2.293l-.042-.18L3.79 1.641H.866A.75.75 0 01.123.993L.116.891A.75.75 0 01.765.148L.866.141h3.53zm17.916 6.206H6.352l1.955 8.983c.145.71.747 1.23 1.472 1.279l.146.003H19a1.602 1.602 0 001.566-1.135l.035-.138 1.711-8.992z">
                         </path>
-                     </svg><span class="count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span></a>
+                     </svg><span class="count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span></a> -->
+
+                   <!-- add the qutation icon and this short code added it -->
+                     <?php echo do_shortcode('[yith_ywraq_number_items class="ywraq_number_items" show_url="no" item_name="item" item_plural_name="items"]'); ?>
+                     
+                     
                </li>
             </ul>
          </div>

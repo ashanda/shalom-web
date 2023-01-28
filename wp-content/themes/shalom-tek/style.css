@@ -1519,5 +1519,42 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   width: 100%;
 }
 
+.add-request-quote-button.button {
+	width: 100%;
+	font-size: 16px;
+	background-color: rgb(115 21 229);
+	color: rgb(255 255 255);
+	border: 0;
+	padding: 8px 0;
+	border-radius: 5px;
+	margin-top: 15px;
+	transform: scale(1);
+	transition: .5s ease-in-out;
+	display: inline-block;
+	text-align: center;
+  }
 
- 
+  .yith-ywraq-add-to-quote.add-to-quote-1530 {
+	padding: 0;
+  }
+
+  .yith-ywraq-add-button.show {
+	padding: 0;
+  }
+.widget_ywraq_mini_list_quote .raq-info {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #000;
+  font-size: 16px;
+  border: none !important;
+  cursor: pointer;
+}
+.widget_ywraq_mini_list_quote {
+	position: relative;
+	padding: 0;
+	display: inline-block;
+	margin: 0 !important;
+	vertical-align: top;
+	z-index: 10;
+  }

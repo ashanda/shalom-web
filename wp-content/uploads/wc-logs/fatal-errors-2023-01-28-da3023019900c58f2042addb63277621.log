@@ -1,0 +1,19 @@
+2023-01-28T04:52:06+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in G:\laragon\www\shalom\wp-content\plugins\yith-woocommerce-request-a-quote-premium-master\includes\class.yith-ywraq-order-request.php:1921
+Stack trace:
+#0 G:\laragon\www\shalom\wp-content\plugins\yith-woocommerce-request-a-quote-premium-master\includes\class.yith-ywraq-order-request.php(1964): YITH_YWRAQ_Order_Request->get_current_order_id()
+#1 G:\laragon\www\shalom\wp-includes\class-wp-hook.php(308): YITH_YWRAQ_Order_Request->check_quote_in_cart('')
+#2 G:\laragon\www\shalom\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#3 G:\laragon\www\shalom\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#4 G:\laragon\www\shalom\wp-settings.php(639): do_action('wp_loaded')
+#5 G:\laragon\www\shalom\wp-config.php(96): require_once('G:\\laragon\\www\\...')
+#6 G:\laragon\www\shalom\wp-load.php(50): require_once('G:\\laragon\\www\\...')
+#7 G:\laragon\www\shalom\wp-cron.php(46): require_once('G:\\laragon\\www\\...')
+#8 {main}
+  thrown in G:\laragon\www\shalom\wp-content\plugins\yith-woocommerce-request-a-quote-premium-master\includes\class.yith-ywraq-order-request.php on line 1921
+
+2023-01-28T04:52:09+00:00 CRITICAL Declaration of YITH_YWRAQ_Send_Email_Request_Quote::get_from_name() must be compatible with WC_Email::get_from_name($from_name = '') in G:\laragon\www\shalom\wp-content\plugins\yith-woocommerce-request-a-quote-premium-master\includes\emails\class.yith-ywraq-send-email-request-quote.php on line 184
+
+2023-01-28T04:52:22+00:00 CRITICAL Declaration of YITH_YWRAQ_Send_Email_Request_Quote::get_from_name() must be compatible with WC_Email::get_from_name($from_name = '') in G:\laragon\www\shalom\wp-content\plugins\yith-woocommerce-request-a-quote-premium-master\includes\emails\class.yith-ywraq-send-email-request-quote.php on line 184
+
+2023-01-28T04:52:28+00:00 CRITICAL Declaration of YITH_YWRAQ_Send_Email_Request_Quote::get_from_name() must be compatible with WC_Email::get_from_name($from_name = '') in G:\laragon\www\shalom\wp-content\plugins\yith-woocommerce-request-a-quote-premium-master\includes\emails\class.yith-ywraq-send-email-request-quote.php on line 184
+
